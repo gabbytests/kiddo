@@ -8223,34 +8223,51 @@ h1, h2, h3, h4, h5,
           border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
           .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs span a {
             color: #fff; }
-/* General Owl Carousel Styles */
+/* Ensure the carousel container has correct overflow settings */
 .owl-carousel {
   position: relative;
-  overflow: hidden; /* Change from 'auto' to 'hidden' to prevent unwanted scrollbars */
+  overflow: hidden; /* Prevent scrollbars in carousel itself */
 }
 
+/* Ensure items have proper opacity and no extra space */
 .owl-carousel .owl-item {
-  opacity: 0.4;
+  opacity: .4;
+  /* Add display settings to prevent unwanted spacing */
+  display: inline-block;
 }
 
+/* Ensure active item is fully visible */
 .owl-carousel .owl-item.active {
   opacity: 1;
 }
 
-/* Navigation Styles */
+/* Navigation styles */
 .owl-carousel .owl-nav {
   position: absolute;
   top: 50%;
   width: 100%;
 }
 
+/* Navigation buttons styles */
 .owl-carousel .owl-nav .owl-prev,
 .owl-carousel .owl-nav .owl-next {
   position: absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  margin-top: -10px;
   color: #1eaaf1 !important;
+  -moz-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  -webkit-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
   transition: all 0.7s ease;
   opacity: 0;
+}
+
+.owl-carousel .owl-nav .owl-prev span:before,
+.owl-carousel .owl-nav .owl-next span:before {
+  font-size: 30px;
 }
 
 .owl-carousel .owl-nav .owl-prev {
@@ -8261,6 +8278,30 @@ h1, h2, h3, h4, h5,
   right: 0;
 }
 
+/* Dots styles */
+.owl-carousel .owl-dots {
+  text-align: center;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  position: relative;
+}
+
+.owl-carousel .owl-dots .owl-dot:hover,
+.owl-carousel .owl-dots .owl-dot:focus {
+  outline: none !important;
+}
+
+.owl-carousel .owl-dots .owl-dot.active {
+  background: #b3b3b3;
+}
+
+/* Hover effects for navigation */
 .owl-carousel:hover .owl-nav .owl-prev,
 .owl-carousel:hover .owl-nav .owl-next {
   opacity: 1;
@@ -8274,24 +8315,7 @@ h1, h2, h3, h4, h5,
   right: -25px;
 }
 
-/* Dots Styles */
-.owl-carousel .owl-dots {
-  text-align: center;
-}
-
-.owl-carousel .owl-dots .owl-dot {
-  width: 10px;
-  height: 10px;
-  margin: 5px;
-  border-radius: 50%;
-  background: #e6e6e6;
-}
-
-.owl-carousel .owl-dots .owl-dot.active {
-  background: #b3b3b3;
-}
-
-/* Home Slider Specific Styles */
+/* Home slider specific styles */
 .owl-carousel.home-slider {
   position: relative;
   height: 600px;
@@ -8302,7 +8326,7 @@ h1, h2, h3, h4, h5,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 600px; /* Retain height */
+  height: 600px;
   position: relative;
   z-index: 0;
 }
@@ -8320,11 +8344,11 @@ h1, h2, h3, h4, h5,
   left: 0;
   right: 0;
   background: #000000;
-  opacity: 0.2;
+  opacity: .2;
 }
 
 .owl-carousel.home-slider .slider-item .slider-text {
-  height: 600px; /* Retain height */
+  height: 600px;
 }
 
 @media (max-width: 767.98px) {
@@ -8407,9 +8431,15 @@ h1, h2, h3, h4, h5,
 .owl-carousel.home-slider .owl-nav .owl-prev,
 .owl-carousel.home-slider .owl-nav .owl-next {
   position: absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin-top: -10px;
   outline: none !important;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
   opacity: 0;
 }
@@ -8418,6 +8448,11 @@ h1, h2, h3, h4, h5,
 .owl-carousel.home-slider .owl-nav .owl-next span:before {
   font-size: 30px;
   color: rgba(255, 255, 255, 0.5);
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .owl-carousel.home-slider .owl-nav .owl-prev:hover span:before,
